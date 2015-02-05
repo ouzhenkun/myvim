@@ -5,6 +5,10 @@ Requirements
 --------------------------
   * Vim 7.3+
 
+Screenshots
+--------------------------
+![](https://raw.githubusercontent.com/zhenkunou/myvim/master/screenshots/myvim01.png)
+
 Installation (Mac OS X)
 --------------------------
 
