@@ -50,11 +50,18 @@ nmap g* g*zzzv
 nmap g# g#zzzv
 
 " Remove search highlight
-map <C-C> <C-C>:noh<CR>
+nmap v<Space> :noh<CR>
 
 " Add a blank line below or above and keep the cursor in place
 nmap <Leader>O m`O<Esc>``
 nmap <Leader>o m`o<Esc>``
+
+" Remap U to <C-r> for easier redo
+nmap U <C-r>
+
+" For Command model
+cmap <C-a> <Home>
+cmap <C-e> <End>
 
 " Navigation between windows
 map <C-J> <C-W>j
@@ -64,8 +71,9 @@ map <C-H> <C-W>h
 
 " Use CTRL-S for saving, also in Insert mode
 nmap <C-S> :update<CR>
-vmap <C-S> <C-C>:update<CR>
-imap <C-S> <C-C>:update<CR>
+imap <C-S> <Esc>:update<CR>
+" Preserves the previous selection
+vmap <C-S> <Esc>:update<CR>gv
 
 " Tab control
 nmap <S-L> :tabn<CR>
@@ -115,7 +123,7 @@ let g:gitgutter_max_signs = 10000
 let g:multi_cursor_next_key = '<C-n>'
 let g:multi_cursor_prev_key = '<C-m>'
 let g:multi_cursor_skip_key = '<C-x>'
-let g:multi_cursor_quit_key = '<C-c>'
+let g:multi_cursor_quit_key = '<Esc>'
 let g:indentLine_char = '┊'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
