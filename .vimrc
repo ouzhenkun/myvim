@@ -18,6 +18,11 @@ set laststatus=2                " Always display the status line
 set showtabline=2               " Display tab bar all the time
 set clipboard=unnamed           " Use OS clipboard for copypasta
 set backspace=indent,eol,start  " Backspace for dummies
+set ttimeoutlen=15              " Less key code delays
+set ttyfast                     " Got a fast terminal
+set ttyscroll=3
+set lazyredraw                  " To avoid scrolling problems
+set synmaxcol=128               " Limit syntax highlighting
 
 " Show ALL white spaces as a character
 set list
