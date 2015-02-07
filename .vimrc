@@ -54,8 +54,8 @@ nmap # #zzzv
 nmap g* g*zzzv
 nmap g# g#zzzv
 
-" Remove search highlight
-nmap v<Space> :noh<CR>
+" Clear search highlighting
+nmap <Leader>/ :noh<CR>
 
 " Add a blank line below or above and keep the cursor in place
 nmap <Leader>O m`O<Esc>``
