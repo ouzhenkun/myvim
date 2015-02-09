@@ -1,7 +1,6 @@
 tpope/vim-pathogen
 kchmck/vim-coffee-script
 groenewege/vim-less
-godlygeek/tabular
 scrooloose/nerdcommenter
 tpope/vim-fugitive
 Lokaltog/vim-easymotion
