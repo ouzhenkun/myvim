@@ -5,6 +5,7 @@ scrooloose/nerdcommenter
 tpope/vim-fugitive
 Lokaltog/vim-easymotion
 mattn/webapi-vim
+zhenkunou/molokai
 zhenkunou/vim-tabline
 bling/vim-airline
 scrooloose/syntastic
@@ -17,4 +18,3 @@ Shougo/neocomplcache.vim
 terryma/vim-multiple-cursors
 kien/ctrlp.vim
 scrooloose/nerdtree
-tomasr/molokai
