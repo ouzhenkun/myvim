@@ -55,14 +55,11 @@ nmap g* g*zzzv
 nmap g# g#zzzv
 
 " Clear search highlighting
-nmap <Leader>/ :noh<CR>
+nmap <Leader><Space> :noh<CR>
 
 " Add a blank line below or above and keep the cursor in place
 nmap <Leader>O m`O<Esc>``
 nmap <Leader>o m`o<Esc>``
-
-" Remap U to <C-r> for easier redo
-nmap U <C-r>
 
 " For Command model
 cmap <C-a> <Home>
@@ -98,14 +95,16 @@ execute pathogen#infect()
 syntax on                 " Syntax highlighting
 filetype plugin indent on " Automatically detect file types
 
+color molokai
+
 map <C-E> :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>h <Plug>(easymotion-linebackward)
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-nmap <Leader>n <Plug>GitGutterNextHunk
-nmap <Leader>p <Plug>GitGutterPrevHunk
+map <Leader>/ <Plug>(easymotion-sn)
+omap <Leader>/ <Plug>(easymotion-tn)
+nmap gj <Plug>GitGutterNextHunk
+nmap gk <Plug>GitGutterPrevHunk
 imap <expr> <Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
 imap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
 imap <expr> <CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
@@ -156,16 +155,4 @@ let g:startify_custom_header = [
         \ '                                  |    _                |     |   [ ##   :',
         \ '                                   \    `--.        ____|  ,   oo_______.`',
         \ ]
-
-color molokai
-hi CursorLine  ctermbg=236                            cterm=none
-hi Visual      ctermbg=236
-hi Search      ctermfg=222        ctermbg=240         cterm=none
-hi MatchParen  ctermfg=none       ctermbg=none        cterm=underline
-hi Pmenu       ctermfg=LightGray  ctermbg=DarkGray
-hi PmenuSel    ctermfg=White      ctermbg=DarkBlue
-hi PmenuSbar   ctermbg=DarkGray
-hi TabLine     ctermfg=LightGray  ctermbg=DarkGray    cterm=none
-hi TabLineSel  ctermfg=White      ctermbg=DarkBlue    cterm=none
-hi TabLineFill ctermfg=Black      ctermbg=DarkGray    cterm=none
 
