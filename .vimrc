@@ -128,10 +128,18 @@ let g:multi_cursor_next_key = '<C-n>'
 let g:multi_cursor_prev_key = '<C-m>'
 let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<Esc>'
+let g:syntastic_html_checkers = []
 let g:indentLine_char = '┊'
+let g:airline_theme = 'molokai'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:syntastic_html_checkers = []
+let g:airline_symbols = {}
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.readonly = 'Ʀ'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline#extensions#hunks#non_zero_only = 1
 let g:startify_list_order = [
         \ ['   Most recently used:'],
         \ 'files',
