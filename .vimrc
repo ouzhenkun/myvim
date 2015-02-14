@@ -130,7 +130,7 @@ let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<Esc>'
 let g:syntastic_html_checkers = []
 let g:indentLine_char = '┊'
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'myvim'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols = {}
@@ -164,3 +164,8 @@ let g:startify_custom_header = [
         \ '                                   \    `--.        ____|  ,   oo_______.`',
         \ ]
 
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END

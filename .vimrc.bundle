@@ -7,7 +7,7 @@ Lokaltog/vim-easymotion
 mattn/webapi-vim
 zhenkunou/molokai
 zhenkunou/vim-tabline
-bling/vim-airline
+zhenkunou/vim-airline
 scrooloose/syntastic
 airblade/vim-gitgutter
 Yggdroot/indentLine
