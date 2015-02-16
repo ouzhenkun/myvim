@@ -140,6 +140,8 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.readonly = 'Ʀ'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#hunks#non_zero_only = 1
+let g:startify_session_persistence = 1 " Automatically update sessions
+let g:startify_session_delete_buffers = 1
 let g:startify_list_order = [
         \ ['   Most recently used:'],
         \ 'files',
