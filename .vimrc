@@ -23,6 +23,7 @@ set ttyfast                     " Got a fast terminal
 set ttyscroll=3
 set lazyredraw                  " To avoid scrolling problems
 set synmaxcol=128               " Limit syntax highlighting
+set pastetoggle=<F10>
 
 " Show ALL white spaces as a character
 set list
