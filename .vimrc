@@ -55,6 +55,9 @@ nmap # #zzzv
 nmap g* g*zzzv
 nmap g# g#zzzv
 
+" Selecting your pasted text
+nmap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
 " Clear search highlighting
 nmap <Leader><Space> :noh<CR>
 
