@@ -11,7 +11,7 @@ zhenkunou/vim-airline
 djoshea/vim-autoread
 scrooloose/syntastic
 airblade/vim-gitgutter
-Yggdroot/indentLine
+nathanaelkane/vim-indent-guides
 mhinz/vim-startify
 mattn/gist-vim
 mileszs/ack.vim
