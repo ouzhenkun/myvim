@@ -25,9 +25,9 @@ set lazyredraw                  " To avoid scrolling problems
 set synmaxcol=128               " Limit syntax highlighting
 set pastetoggle=<F10>
 
-" Show ALL white spaces as a character
+" Showing some whitespace chars
 set list
-set listchars=tab:»●,trail:●
+set listchars=tab:\ \ ,trail:●
 
 " No sound on errors
 set noerrorbells
@@ -151,10 +151,10 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:startify_session_persistence = 1 " Automatically update sessions
 let g:startify_session_delete_buffers = 1
 let g:startify_list_order = [
-        \ ['   Most recently used:'],
-        \ 'files',
         \ ['   Sessions:'],
         \ 'sessions',
+        \ ['   Most recently used:'],
+        \ 'files',
         \ ['   Bookmarks:'],
         \ 'bookmarks',
         \ ]
