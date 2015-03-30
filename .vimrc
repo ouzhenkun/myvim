@@ -59,7 +59,7 @@ nmap g# g#zzzv
 nmap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " Clear search highlighting
-nmap <Leader><Space> :noh<CR>
+nmap <silent><Leader><Space> :noh<CR>
 
 " Add a blank line below or above and keep the cursor in place
 nmap <Leader>O m`O<Esc>``
@@ -74,8 +74,8 @@ vmap <Leader>p "_dp
 vmap <Leader>P "_dP
 
 " For Command model
-cmap <C-a> <Home>
-cmap <C-e> <End>
+cmap <C-A> <Home>
+cmap <C-E> <End>
 
 " Navigation between windows
 map <C-J> <C-W>j
@@ -84,18 +84,18 @@ map <C-L> <C-W>l
 map <C-H> <C-W>h
 
 " Use CTRL-S for saving, also in Insert mode
-nmap <C-S> :update<CR>
-imap <C-S> <Esc>:update<CR>
+nmap <silent><C-S> :update<CR>
+imap <silent><C-S> <Esc>:update<CR>
 " Preserves the previous selection
-vmap <C-S> <Esc>:update<CR>gv
+vmap <silent><C-S> <Esc>:update<CR>gv
 
 " Tab control
-nmap <S-L> :tabn<CR>
-nmap <S-H> :tabp<CR>
-nmap <C-M>L :tabm +1<CR>
-nmap <C-M>H :tabm -1<CR>
-nmap <C-T> :tabnew<CR>
-nmap <C-Q> :q
+nmap <silent>L :tabn<CR>
+nmap <silent>H :tabp<CR>
+nmap <silent><C-M>L :tabm +1<CR>
+nmap <silent><C-M>H :tabm -1<CR>
+nmap <silent><C-T> :tabnew<CR>
+nmap <silent><C-Q> :q
 
 
 "
