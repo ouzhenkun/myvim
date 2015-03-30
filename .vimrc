@@ -65,6 +65,14 @@ nmap <Leader><Space> :noh<CR>
 nmap <Leader>O m`O<Esc>``
 nmap <Leader>o m`o<Esc>``
 
+" Use the 'black hole register', "_ to really delete/paste something.
+nmap <Leader>d "_d
+vmap <Leader>d "_d
+nmap <Leader>D "_D
+vmap <Leader>D "_D
+vmap <Leader>p "_dp
+vmap <Leader>P "_dP
+
 " For Command model
 cmap <C-a> <Home>
 cmap <C-e> <End>
@@ -117,7 +125,7 @@ imap <expr> <C-B>   neocomplcache#cancel_popup()
 set viminfo='100,n$HOME/.vim/viminfo
 set wildignore+=
       \*/tmp/*,*/.tmp/*,*/dist/*,
-      \*/.idea/*,*/node_modules/*,*/platforms/*,
+      \*/.idea/*,*/node_modules/*,*/platforms/*,*/.live-archive/*,
       \*.jar,*.zip,*.so,*.swp,*.class,*.map,*.swf,*.swc
 
 let g:ackhighlight = 1
