@@ -73,21 +73,15 @@ vmap <Leader>D "_D
 vmap <Leader>p "_dp
 vmap <Leader>P "_dP
 
-" For Command model
+" Navigation - command line
 cmap <C-A> <Home>
 cmap <C-E> <End>
 
-" Navigation between windows
+" Navigation - between windows
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
-
-" Use CTRL-S for saving, also in Insert mode
-nmap <silent><C-S> :update<CR>
-imap <silent><C-S> <Esc>:update<CR>
-" Preserves the previous selection
-vmap <silent><C-S> <Esc>:update<CR>gv
 
 " Tab control
 nmap <silent>L :tabn<CR>
@@ -97,6 +91,23 @@ nmap <silent><C-M>H :tabm -1<CR>
 nmap <silent><C-T> :tabnew<CR>
 nmap <silent><C-Q> :q
 
+" Use CTRL-S for saving, also in Insert mode
+nmap <silent><C-S> :update<CR>
+imap <silent><C-S> <Esc>:update<CR>
+" Preserves the previous selection
+vmap <silent><C-S> <Esc>:update<CR>gv
+
+" Improve F1
+imap <F1> <Esc>
+nmap <silent><F1> :call ToggleHelp()<CR>
+
+fu ToggleHelp()
+  if &buftype == "help"
+    exec 'quit'
+  else
+    exec "help ".expand("<cword>")
+  endif
+endf
 
 "
 " Bundle
@@ -115,12 +126,12 @@ map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>h <Plug>(easymotion-linebackward)
 map <Leader>/ <Plug>(easymotion-sn)
 omap <Leader>/ <Plug>(easymotion-tn)
-nmap gj <Plug>GitGutterNextHunk
-nmap gk <Plug>GitGutterPrevHunk
-imap <expr> <Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
-imap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
-imap <expr> <CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
-imap <expr> <C-B>   neocomplcache#cancel_popup()
+nmap <F8> <Plug>GitGutterNextHunk
+nmap <F7> <Plug>GitGutterPrevHunk
+imap <expr><Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
+imap <expr><S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
+imap <expr><CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
+imap <expr><C-B>   neocomplcache#cancel_popup()
 
 set viminfo='100,n$HOME/.vim/viminfo
 set wildignore+=
