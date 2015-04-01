@@ -1,6 +1,7 @@
 set nocompatible
 set autoindent
 set modifiable
+set nowrap
 set nobackup
 set nowritebackup
 set number                      " Show line numbers
@@ -46,6 +47,8 @@ let mapleader = ","
 " Swap iTerm2 cursors in vim insert mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+map <F5> :set nowrap! <CR>
 
 " Keep search matches in the middle of the window
 nmap n nzzzv
