@@ -19,3 +19,4 @@ Shougo/neocomplcache.vim
 terryma/vim-multiple-cursors
 kien/ctrlp.vim
 scrooloose/nerdtree
+digitaltoad/vim-jade
