@@ -155,6 +155,7 @@ let g:multi_cursor_prev_key = '<C-m>'
 let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<Esc>'
 let g:syntastic_html_checkers = []
+let g:javascript_ignore_javaScriptdoc = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
@@ -201,3 +202,13 @@ augroup CursorLineOnlyInActiveWindow
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
+
+autocmd VimLeavePre * call CleanupHiddenBuffers()
+
+function CleanupHiddenBuffers()
+  let tpbl=[]
+  call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+  for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+      silent execute 'bwipeout' buf
+  endfor
+endfunction
