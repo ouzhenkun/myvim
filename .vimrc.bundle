@@ -1,7 +1,5 @@
 tpope/vim-pathogen
-kchmck/vim-coffee-script
-groenewege/vim-less
-scrooloose/nerdcommenter
+tpope/vim-commentary
 tpope/vim-fugitive
 Lokaltog/vim-easymotion
 mattn/webapi-vim
@@ -19,5 +17,9 @@ Shougo/neocomplcache.vim
 terryma/vim-multiple-cursors
 kien/ctrlp.vim
 scrooloose/nerdtree
+kchmck/vim-coffee-script
 pangloss/vim-javascript
 digitaltoad/vim-jade
+groenewege/vim-less
+mxw/vim-jsx
+othree/javascript-libraries-syntax.vim

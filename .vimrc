@@ -92,7 +92,7 @@ nmap <silent>H :tabp<CR>
 nmap <silent><C-M>L :tabm +1<CR>
 nmap <silent><C-M>H :tabm -1<CR>
 nmap <silent><C-T> :tabnew<CR>
-nmap <silent><C-Q> :q
+nmap <C-X> :q
 
 " Use CTRL-S for saving, also in Insert mode
 nmap <silent><C-S> :update<CR>
@@ -135,6 +135,10 @@ imap <expr><Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
 imap <expr><S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
 imap <expr><CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
 imap <expr><C-B>   neocomplcache#cancel_popup()
+nmap <Leader>c<Space> gcc
+vmap <Leader>c<Space> gc
+nmap <Leader>c gc
+vmap <Leader>c gc
 
 set viminfo='100,n$HOME/.vim/viminfo
 set wildignore+=
@@ -154,7 +158,16 @@ let g:multi_cursor_next_key = '<C-n>'
 let g:multi_cursor_prev_key = '<C-m>'
 let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<Esc>'
-let g:syntastic_html_checkers = []
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_error_symbol = ">>"
+let g:syntastic_warning_symbol = ">"
+let g:syntastic_stl_format = 'Syntax: %F #%t'
+
+let g:used_javascript_libs = 'angularjs,react,flux,chai,jquery,underscore'
+let javascript_enable_domhtmlcss = 1
+
 let g:javascript_ignore_javaScriptdoc = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
