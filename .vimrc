@@ -42,11 +42,23 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
-let mapleader = ","
-
+" tmux
+inoremap <special> <Esc> <Esc>hl
+if exists('$TMUX')
+  set term=screen-256color
+endif
 " Swap iTerm2 cursors in vim insert mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+if exists('$ITERM_PROFILE')
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+end
+
+let mapleader = ","
 
 map <F5> :set nowrap! <CR>
 
