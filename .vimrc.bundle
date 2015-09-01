@@ -23,3 +23,4 @@ digitaltoad/vim-jade
 groenewege/vim-less
 mxw/vim-jsx
 othree/javascript-libraries-syntax.vim
+terryma/vim-smooth-scroll

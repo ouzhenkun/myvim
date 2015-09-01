@@ -17,7 +17,7 @@ set ignorecase                  " Case insensitive search
 set history=100                 " Number of things to remember in history.
 set laststatus=2                " Always display the status line
 set showtabline=2               " Display tab bar all the time
-set clipboard=unnamed           " Use OS clipboard for copypasta
+set clipboard=unnamed           " Use OS clipboard
 set backspace=indent,eol,start  " Backspace for dummies
 set ttimeoutlen=15              " Less key code delays
 set ttyfast                     " Got a fast terminal
@@ -104,7 +104,6 @@ nmap <silent>H :tabp<CR>
 nmap <silent><C-M>L :tabm +1<CR>
 nmap <silent><C-M>H :tabm -1<CR>
 nmap <silent><C-T> :tabnew<CR>
-nmap <C-X> :q
 
 " Use CTRL-S for saving, also in Insert mode
 nmap <silent><C-S> :update<CR>
@@ -143,14 +142,15 @@ map <Leader>/ <Plug>(easymotion-sn)
 omap <Leader>/ <Plug>(easymotion-tn)
 nmap <F8> <Plug>GitGutterNextHunk
 nmap <F7> <Plug>GitGutterPrevHunk
-imap <expr><Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
-imap <expr><S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
 imap <expr><CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
-imap <expr><C-B>   neocomplcache#cancel_popup()
 nmap <Leader>c<Space> gcc
 vmap <Leader>c<Space> gc
 nmap <Leader>c gc
 vmap <Leader>c gc
+nmap <C-U> :call smooth_scroll#up(&scroll, 5, 2)<CR>
+nmap <C-D> :call smooth_scroll#down(&scroll, 5, 2)<CR>
+nmap <C-B> :call smooth_scroll#up(&scroll*2, 5, 4)<CR>
+nmap <C-F> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
 
 set viminfo='100,n$HOME/.vim/viminfo
 set wildignore+=
@@ -167,8 +167,8 @@ let g:neocomplcache_enable_fuzzy_completion = 1
 let g:gist_post_private = 1
 let g:gitgutter_max_signs = 10000
 let g:multi_cursor_next_key = '<C-n>'
-let g:multi_cursor_prev_key = '<C-m>'
-let g:multi_cursor_skip_key = '<C-x>'
+let g:multi_cursor_prev_key = '<C-p>'
+let g:multi_cursor_skip_key = '<C-k>'
 let g:multi_cursor_quit_key = '<Esc>'
 
 let g:syntastic_javascript_checkers = ['eslint']
@@ -196,6 +196,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.readonly = 'Ʀ'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#branch#enabled = 0
 let g:startify_session_persistence = 1 " Automatically update sessions
 let g:startify_session_delete_buffers = 1
 let g:startify_list_order = [
@@ -229,6 +230,8 @@ augroup CursorLineOnlyInActiveWindow
 augroup END
 
 autocmd VimLeavePre * call CleanupHiddenBuffers()
+
+autocmd QuickFixCmdPost *grep* cwindow
 
 function CleanupHiddenBuffers()
   let tpbl=[]
