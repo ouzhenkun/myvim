@@ -98,6 +98,15 @@ map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
 
+" Fix arrow keys that display A B C D
+autocmd InsertEnter * set timeoutlen=0
+autocmd InsertLeave * set timeoutlen=500
+imap <Esc>o <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+
 " Tab control
 nmap <silent>L :tabn<CR>
 nmap <silent>H :tabp<CR>
@@ -122,7 +131,6 @@ fu ToggleHelp()
     exec "help ".expand("<cword>")
   endif
 endf
-
 "
 " Bundle
 " Runtime Path Manipulation
@@ -133,7 +141,6 @@ syntax on                 " Syntax highlighting
 filetype plugin indent on " Automatically detect file types
 
 color molokai
-
 map <C-E> :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
 map <Leader>l <Plug>(easymotion-lineforward)
@@ -142,7 +149,10 @@ map <Leader>/ <Plug>(easymotion-sn)
 omap <Leader>/ <Plug>(easymotion-tn)
 nmap <F8> <Plug>GitGutterNextHunk
 nmap <F7> <Plug>GitGutterPrevHunk
-imap <expr><CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
+imap <expr><CR>  pumvisible() ? "\<C-Y>" : "\<CR>"
+imap <expr><C-J> pumvisible() ? "\<Down>" : "\<C-J>"
+imap <expr><C-K> pumvisible() ? "\<Up>" : "\<C-K>"
+
 nmap <Leader>c<Space> gcc
 vmap <Leader>c<Space> gc
 nmap <Leader>c gc
