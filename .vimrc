@@ -88,6 +88,9 @@ vmap <Leader>D "_D
 vmap <Leader>p "_dp
 vmap <Leader>P "_dP
 
+" toggle between bash and vim
+nmap <Leader><C-D> :sh<CR>
+
 " Navigation - command line
 cmap <C-A> <Home>
 cmap <C-E> <End>
@@ -97,15 +100,6 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
-
-" Fix arrow keys that display A B C D
-autocmd InsertEnter * set timeoutlen=0
-autocmd InsertLeave * set timeoutlen=500
-imap <Esc>o <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
-map <Left> <Nop>
-map <Right> <Nop>
 
 " Tab control
 nmap <silent>L :tabn<CR>
@@ -175,11 +169,14 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_auto_delimiter = 1
 let g:neocomplcache_enable_fuzzy_completion = 1
 let g:gist_post_private = 1
+let g:instant_markdown_autostart = 0
 let g:gitgutter_max_signs = 10000
 let g:multi_cursor_next_key = '<C-n>'
 let g:multi_cursor_prev_key = '<C-p>'
 let g:multi_cursor_skip_key = '<C-k>'
 let g:multi_cursor_quit_key = '<Esc>'
+
+let g:jsx_ext_required = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_always_populate_loc_list = 1

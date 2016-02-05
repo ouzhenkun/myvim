@@ -1,6 +1,8 @@
 tpope/vim-pathogen
 tpope/vim-commentary
 tpope/vim-fugitive
+tpope/vim-surround
+mattn/emmet-vim
 Lokaltog/vim-easymotion
 mattn/webapi-vim
 zhenkunou/molokai
@@ -17,6 +19,7 @@ Shougo/neocomplcache.vim
 terryma/vim-multiple-cursors
 kien/ctrlp.vim
 scrooloose/nerdtree
+jistr/vim-nerdtree-tabs
 kchmck/vim-coffee-script
 pangloss/vim-javascript
 digitaltoad/vim-jade
