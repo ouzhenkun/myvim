@@ -10,8 +10,6 @@ backup() {
 }
 
 install() {
-    # Use CTRL-S for saving, also in Insert mode
-    echo "alias vim=\"stty stop '' -ixoff; vim\"" >> $HOME/.bash_profile
     ln -sf $HOME/myvim/.vimrc $HOME/.vimrc
     mkdir -p $HOME/.vim/bundle
     rm -rf $HOME/.vim/bundle/*

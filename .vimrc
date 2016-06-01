@@ -26,6 +26,10 @@ set lazyredraw                  " To avoid scrolling problems
 set synmaxcol=128               " Limit syntax highlighting
 set pastetoggle=<F10>
 
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 " Showing some whitespace chars
 set list
 set listchars=tab:\ \ ,trail:●
@@ -108,12 +112,6 @@ nmap <silent><C-M>L :tabm +1<CR>
 nmap <silent><C-M>H :tabm -1<CR>
 nmap <silent><C-T> :tabnew<CR>
 
-" Use CTRL-S for saving, also in Insert mode
-nmap <silent><C-S> :update<CR>
-imap <silent><C-S> <Esc>:update<CR>
-" Preserves the previous selection
-vmap <silent><C-S> <Esc>:update<CR>gv
-
 " Improve F1
 imap <F1> <Esc>
 nmap <silent><F1> :call ToggleHelp()<CR>
@@ -158,10 +156,14 @@ nmap <C-F> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
 
 set viminfo='100,n$HOME/.vim/viminfo
 set wildignore+=
-      \*/tmp/*,*/.tmp/*,*/dist/*,
-      \*/.idea/*,*/node_modules/*,*/platforms/*,*/.live-archive/*,
-      \*.jar,*.zip,*.so,*.swp,*.class,*.map,*.swf,*.swc
+  \*/tmp/*,*/.tmp/*,*/dist/*,*/coverage/*,
+  \*/.idea/*,*/node_modules/*,*/platforms/*,*/.live-archive/*,
+  \*.jar,*.zip,*.so,*.swp,*.class,*.map,*.swf,*.swc
 
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|coverage)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
 let g:ackhighlight = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_clear_cache_on_exit = 0
@@ -171,10 +173,9 @@ let g:neocomplcache_enable_fuzzy_completion = 1
 let g:gist_post_private = 1
 let g:instant_markdown_autostart = 0
 let g:gitgutter_max_signs = 10000
-let g:multi_cursor_next_key = '<C-n>'
-let g:multi_cursor_prev_key = '<C-p>'
-let g:multi_cursor_skip_key = '<C-k>'
-let g:multi_cursor_quit_key = '<Esc>'
+
+let g:UltiSnipsJumpForwardTrigger = '<C-F>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-B>'
 
 let g:jsx_ext_required = 0
 
@@ -207,28 +208,28 @@ let g:airline#extensions#branch#enabled = 0
 let g:startify_session_persistence = 1 " Automatically update sessions
 let g:startify_session_delete_buffers = 1
 let g:startify_list_order = [
-        \ ['   Sessions:'],
-        \ 'sessions',
-        \ ['   Most recently used:'],
-        \ 'files',
-        \ ['   Bookmarks:'],
-        \ 'bookmarks',
-        \ ]
+  \ ['   Sessions:'],
+  \ 'sessions',
+  \ ['   Most recently used:'],
+  \ 'files',
+  \ ['   Bookmarks:'],
+  \ 'bookmarks',
+  \ ]
 let g:startify_custom_header = [
-        \ '                                                                   Z',
-        \ '      |\/|    \  /`.|\/|                                    Z',
-        \ '      |  |\/   \/  ||  |                (,.~.,.        z',
-        \ '          /                             ////((\\    z',
-        \ '   __________________________          ///`_  _`\ `    ___________________',
-        \ '                                       ||G   \ ||      ',
-        \ '   First, solve the problem.           .\|.: ~ :         .--------------.',
-        \ '                                      __.| `"`.__       | \              |',
-        \ '   Then, write the code.            .``   `---`   `.    |  .             :',
-        \ '                                   /                `   |   `-.__________)',
-        \ '   - John Johnson                 |   H A C K I N G     |  :  |          .',
-        \ '                                  |    _                |     |   [ ##   :',
-        \ '                                   \    `--.        ____|  ,   oo_______.`',
-        \ ]
+  \ '                                                                   Z',
+  \ '      |\/|    \  /`.|\/|                                    Z',
+  \ '      |  |\/   \/  ||  |                (,.~.,.        z',
+  \ '          /                             ////((\\    z',
+  \ '   __________________________          ///`_  _`\ `    ___________________',
+  \ '                                       ||G   \ ||      ',
+  \ '   First, solve the problem.           .\|.: ~ :         .--------------.',
+  \ '                                      __.| `"`.__       | \              |',
+  \ '   Then, write the code.            .``   `---`   `.    |  .             :',
+  \ '                                   /                `   |   `-.__________)',
+  \ '   - John Johnson                 |   H A C K I N G     |  :  |          .',
+  \ '                                  |    _                |     |   [ ##   :',
+  \ '                                   \    `--.        ____|  ,   oo_______.`',
+  \ ]
 
 augroup CursorLineOnlyInActiveWindow
   autocmd!
@@ -239,6 +240,8 @@ augroup END
 autocmd VimLeavePre * call CleanupHiddenBuffers()
 
 autocmd QuickFixCmdPost *grep* cwindow
+
+autocmd FileType * setlocal foldmethod=indent
 
 function CleanupHiddenBuffers()
   let tpbl=[]

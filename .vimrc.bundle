@@ -16,7 +16,6 @@ mhinz/vim-startify
 mattn/gist-vim
 mileszs/ack.vim
 Shougo/neocomplcache.vim
-terryma/vim-multiple-cursors
 kien/ctrlp.vim
 scrooloose/nerdtree
 jistr/vim-nerdtree-tabs
@@ -27,3 +26,5 @@ groenewege/vim-less
 mxw/vim-jsx
 othree/javascript-libraries-syntax.vim
 terryma/vim-smooth-scroll
+mtscout6/syntastic-local-eslint.vim
+honza/vim-snippets
