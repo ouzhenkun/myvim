@@ -1,3 +1,5 @@
+set shell=bash\ -i
+
 set nocompatible
 set autoindent
 set modifiable
@@ -84,14 +86,6 @@ nmap <silent><Leader><Space> :noh<CR>
 nmap <Leader>O m`O<Esc>``
 nmap <Leader>o m`o<Esc>``
 
-" Use the 'black hole register', "_ to really delete/paste something.
-nmap <Leader>d "_d
-vmap <Leader>d "_d
-nmap <Leader>D "_D
-vmap <Leader>D "_D
-vmap <Leader>p "_dp
-vmap <Leader>P "_dP
-
 " toggle between bash and vim
 nmap <Leader><C-D> :sh<CR>
 
@@ -154,6 +148,11 @@ nmap <C-D> :call smooth_scroll#down(&scroll, 5, 2)<CR>
 nmap <C-B> :call smooth_scroll#up(&scroll*2, 5, 4)<CR>
 nmap <C-F> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
 
+nmap <F4> :AddHeader<CR>
+
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+
 set viminfo='100,n$HOME/.vim/viminfo
 set wildignore+=
   \*/tmp/*,*/.tmp/*,*/dist/*,*/coverage/*,
@@ -164,12 +163,23 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|coverage)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-let g:ackhighlight = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_clear_cache_on_exit = 0
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+let g:ackhighlight = 1
+
+let g:header_field_filename = 0
+let g:header_field_author = 'Zhenkun'
+let g:header_field_author_email = 'ryan.ouzhenkun@gmail.com'
+let g:header_field_timestamp_format = '%Y.%m.%d'
+
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_auto_delimiter = 1
 let g:neocomplcache_enable_fuzzy_completion = 1
+
 let g:gist_post_private = 1
 let g:instant_markdown_autostart = 0
 let g:gitgutter_max_signs = 10000

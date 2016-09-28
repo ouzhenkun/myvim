@@ -8,6 +8,7 @@ mattn/webapi-vim
 zhenkunou/molokai
 zhenkunou/vim-tabline
 zhenkunou/vim-airline
+zhenkunou/vim-header
 djoshea/vim-autoread
 scrooloose/syntastic
 airblade/vim-gitgutter
