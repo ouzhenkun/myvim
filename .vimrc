@@ -89,6 +89,8 @@ nmap <Leader>o m`o<Esc>``
 " toggle between bash and vim
 nmap <Leader><C-D> :sh<CR>
 
+nmap <Leader>j=: <Leader>wj
+
 " Navigation - command line
 cmap <C-A> <Home>
 cmap <C-E> <End>
@@ -157,7 +159,7 @@ set viminfo='100,n$HOME/.vim/viminfo
 set wildignore+=
   \*/tmp/*,*/.tmp/*,*/dist/*,*/coverage/*,
   \*/.idea/*,*/node_modules/*,*/platforms/*,*/.live-archive/*,
-  \*.jar,*.zip,*.so,*.swp,*.class,*.map,*.swf,*.swc
+  \*.jar,*.zip,*.so,*.swp,*.class,*.map,*.swc
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|coverage)$',
