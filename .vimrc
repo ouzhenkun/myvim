@@ -138,17 +138,13 @@ omap <Leader>/ <Plug>(easymotion-tn)
 nmap <F8> <Plug>GitGutterNextHunk
 nmap <F7> <Plug>GitGutterPrevHunk
 imap <expr><CR>  pumvisible() ? "\<C-Y>" : "\<CR>"
-imap <expr><C-J> pumvisible() ? "\<Down>" : "\<C-J>"
-imap <expr><C-K> pumvisible() ? "\<Up>" : "\<C-K>"
+imap <expr><C-J> pumvisible() ? "\<C-N>" : "\<C-J>"
+imap <expr><C-K> pumvisible() ? "\<C-U>" : "\<C-K>"
 
 nmap <Leader>c<Space> gcc
 vmap <Leader>c<Space> gc
 nmap <Leader>c gc
 vmap <Leader>c gc
-nmap <C-U> :call smooth_scroll#up(&scroll, 5, 2)<CR>
-nmap <C-D> :call smooth_scroll#down(&scroll, 5, 2)<CR>
-nmap <C-B> :call smooth_scroll#up(&scroll*2, 5, 4)<CR>
-nmap <C-F> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
 
 nmap <F4> :AddHeader<CR>
 

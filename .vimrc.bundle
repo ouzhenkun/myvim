@@ -5,10 +5,10 @@ tpope/vim-surround
 mattn/emmet-vim
 Lokaltog/vim-easymotion
 mattn/webapi-vim
-zhenkunou/molokai
-zhenkunou/vim-tabline
-zhenkunou/vim-airline
-zhenkunou/vim-header
+ouzhenkun/molokai
+ouzhenkun/vim-tabline
+ouzhenkun/vim-airline
+ouzhenkun/vim-header
 djoshea/vim-autoread
 scrooloose/syntastic
 airblade/vim-gitgutter
@@ -26,6 +26,5 @@ digitaltoad/vim-jade
 groenewege/vim-less
 mxw/vim-jsx
 othree/javascript-libraries-syntax.vim
-terryma/vim-smooth-scroll
 mtscout6/syntastic-local-eslint.vim
 honza/vim-snippets
