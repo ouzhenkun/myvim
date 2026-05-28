@@ -25,6 +25,7 @@ pangloss/vim-javascript
 digitaltoad/vim-jade
 groenewege/vim-less
 mxw/vim-jsx
+leafgarland/typescript-vim
 othree/javascript-libraries-syntax.vim
 mtscout6/syntastic-local-eslint.vim
 honza/vim-snippets
