@@ -129,6 +129,10 @@ syntax on                 " Syntax highlighting
 filetype plugin indent on " Automatically detect file types
 
 color molokai
+highlight Visual ctermfg=235 ctermbg=223 guifg=#282828 guibg=#ebdbb2
+let &t_SI = "\e[5 q"
+let &t_SR = "\e[3 q"
+let &t_EI = "\e[2 q"
 map <C-E> :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
 map <Leader>l <Plug>(easymotion-lineforward)
