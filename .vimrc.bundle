@@ -16,7 +16,7 @@ nathanaelkane/vim-indent-guides
 mhinz/vim-startify
 mattn/gist-vim
 mileszs/ack.vim
-Shougo/neocomplcache.vim
+# Shougo/neocomplcache.vim
 kien/ctrlp.vim
 scrooloose/nerdtree
 jistr/vim-nerdtree-tabs

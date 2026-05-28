@@ -49,20 +49,20 @@ set shiftwidth=2
 set softtabstop=2
 
 " tmux
-inoremap <special> <Esc> <Esc>hl
-if exists('$TMUX')
-  set term=screen-256color
-endif
+" inoremap <special> <Esc> <Esc>hl
+" if exists('$TMUX')
+"   set term=screen-256color
+" endif
 " Swap iTerm2 cursors in vim insert mode
-if exists('$ITERM_PROFILE')
-  if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  endif
-end
+" if exists('$ITERM_PROFILE')
+"   if exists('$TMUX')
+"     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+"   else
+"     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"   endif
+" end
 
 let mapleader = ","
 
@@ -174,9 +174,9 @@ let g:header_field_author = 'Zhenkun'
 let g:header_field_author_email = 'ryan.ouzhenkun@gmail.com'
 let g:header_field_timestamp_format = '%Y.%m.%d'
 
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_auto_delimiter = 1
-let g:neocomplcache_enable_fuzzy_completion = 1
+" let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_auto_delimiter = 1
+" let g:neocomplcache_enable_fuzzy_completion = 1
 
 let g:gist_post_private = 1
 let g:instant_markdown_autostart = 0
@@ -193,7 +193,7 @@ let g:syntastic_error_symbol = ">>"
 let g:syntastic_warning_symbol = ">"
 let g:syntastic_stl_format = 'Syntax: %F #%t'
 
-let g:used_javascript_libs = 'angularjs,react,flux,chai,jquery,underscore'
+let g:used_javascript_libs = 'react,flux,chai,jquery,underscore'
 let javascript_enable_domhtmlcss = 1
 
 let g:javascript_ignore_javaScriptdoc = 1
